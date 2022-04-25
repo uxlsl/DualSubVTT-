@@ -12,6 +12,7 @@ def main():
     if len(sys.argv) == 1:
         print("{} vtt".format(argv[0]))
         return
+
     for cap in webvtt.WebVTT().read(sys.argv[1]):
         text = cap.text + "\n" + ts.google(cap.text)
         cap.text = text
