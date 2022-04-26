@@ -14,7 +14,7 @@ def main():
         return
 
     for cap in webvtt.WebVTT().read(sys.argv[1]):
-        text = cap.text + "\n" + ts.google(cap.text)
+        text = cap.text + "\n" + ts.google(cap.text, to_language="cn")
         cap.text = text
         captions.append(cap)
 
